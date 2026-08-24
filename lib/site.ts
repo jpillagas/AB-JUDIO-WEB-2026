@@ -1,5 +1,13 @@
 // Configuración global del sitio. Cambia aquí y se actualiza en todas partes.
 
+export type Office = {
+  id: string;
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+};
+
 export const site = {
   name: "El Abogado Judio",
   legalName: "Neuhauser Law",
@@ -14,6 +22,50 @@ export const site = {
     line1: "Brooklyn, Nueva York",
     line2: "Estados Unidos",
   },
+  offices: [
+    {
+      id: "glendale",
+      name: "Glendale",
+      address: "64-25 Central Ave, Glendale, Queens, NY 11385",
+      lat: 40.7048,
+      lng: -73.8819,
+    },
+    {
+      id: "jackson-heights",
+      name: "Jackson Heights",
+      address: "90-20 Elmhurst Ave, Jackson Heights, Queens, NY 11372",
+      lat: 40.7483,
+      lng: -73.8790,
+    },
+    {
+      id: "newark",
+      name: "Newark",
+      address: "110 Congress St, Newark, NJ 07105",
+      lat: 40.7264,
+      lng: -74.1565,
+    },
+    {
+      id: "east-haven",
+      name: "East Haven",
+      address: "310 Main St, East Haven, CT 06512",
+      lat: 41.2765,
+      lng: -72.8682,
+    },
+    {
+      id: "stratford",
+      name: "Stratford",
+      address: "919 Stratford Ave Unit 3, Stratford, CT 06615",
+      lat: 41.1848,
+      lng: -73.1330,
+    },
+    {
+      id: "danbury",
+      name: "Danbury",
+      address: "3 West St, Danbury, CT 06810",
+      lat: 41.3948,
+      lng: -73.4540,
+    },
+  ] satisfies Office[],
   serviceArea: ["Nueva York", "Nueva Jersey", "Connecticut"],
   hours: [
     { day: "Lunes a Viernes", hours: "9:00 AM – 6:00 PM" },
@@ -37,6 +89,11 @@ export const site = {
     { label: "Servicios", href: "/servicios" },
     { label: "Contacto", href: "/contacto" },
     { label: "Noticias", href: "/blog" },
+  ],
+  bookingAreas: [
+    { label: "Inmigración", href: "https://elabogadojudio.com/citas/" },
+    { label: "Personal Injury", href: "https://elabogadojudio.com/citas/" },
+    { label: "Real Estate", href: "https://elabogadojudio.com/citas/" },
   ],
 };
 
