@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import CinematicPageHero from "@/components/cinematic/CinematicPageHero";
-import ContactBlock from "@/components/sections/ContactBlock";
-import ContactMap from "@/components/sections/ContactMap";
+import ContactHub from "@/components/sections/ContactHub";
 import ContactFAQ from "@/components/sections/ContactFAQ";
 
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Agenda tu consulta gratuita. Contáctanos por teléfono, WhatsApp o formulario. Atendemos a la comunidad hispana en Nueva York, Nueva Jersey y Connecticut.",
+    "Agenda tu consulta. Elige Inmigración, Personal Injury o Real Estate y visita nuestras sucursales en NY, NJ y CT.",
 };
 
 export default function ContactoPage() {
@@ -18,8 +17,7 @@ export default function ContactoPage() {
         subtitle="Agenda tu consulta gratuita y hablemos hoy mismo de tu caso."
         pageKey="contacto"
       />
-      <ContactBlock />
-      <ContactMap />
+      <ContactHub />
       <ContactFAQ />
     </>
   );
