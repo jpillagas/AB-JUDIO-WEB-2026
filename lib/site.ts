@@ -19,8 +19,14 @@ export const site = {
   phoneDisplay: "+1 (718) 919 9000",
   phoneRaw: "+17189199000",
   email: "info@elabogadojudio.com",
-  whatsapp: "17189199000",
+  /** WhatsApp general + Inmigración */
+  whatsapp: "18888312762",
   whatsappMessage: "Hola, vengo desde su sitio web y quiero agendar una consulta.",
+  whatsappByArea: {
+    inmigracion: "18888312762",
+    "personal-injury": "18889106831",
+    "real-estate": "19296006704",
+  },
   address: {
     line1: "Brooklyn, Nueva York",
     line2: "Estados Unidos",
@@ -76,7 +82,7 @@ export const site = {
     { day: "Domingos", hours: "Cerrado" },
   ],
   social: {
-    facebook: "https://facebook.com/elabogadojudio",
+    facebook: "https://www.facebook.com/abogadojudio",
     instagram: "https://instagram.com/elabogadojudio",
     tiktok: "https://tiktok.com/@elabogadojudio",
   },
@@ -274,14 +280,14 @@ export const team = [
     image: "/imagenes/team/gabriel-castro.jpg",
   },
   {
-    name: "Jenny Pardo",
-    role: "Regional Manager",
-    image: null,
-  },
-  {
     name: "Mateo Garzón",
     role: "Manager",
     image: "/imagenes/team/mateo-garzon.jpg",
+  },
+  {
+    name: "Juan Carlos Miranda",
+    role: "Director de Comunicación",
+    image: "/imagenes/team/juan-carlos-miranda.jpg",
   },
   {
     name: "Alejandro Navarro",
@@ -289,9 +295,9 @@ export const team = [
     image: null,
   },
   {
-    name: "Juan Carlos Miranda",
-    role: "Director de Comunicación",
-    image: "/imagenes/team/juan-carlos-miranda.jpg",
+    name: "Jenny Pardo",
+    role: "Regional Manager",
+    image: null,
   },
   {
     name: "Luis Chávez",
@@ -304,8 +310,8 @@ export const team = [
     image: "/imagenes/team/rajinder-kaur.jpg",
   },
   {
-    name: "Anastasia Le",
-    role: "Attorney",
+    name: "Anastasia Lee",
+    role: "Abogada de inmigración",
     image: null,
   },
   {
@@ -324,6 +330,11 @@ export const team = [
     image: "/imagenes/team/antonella-orejuela.jpg",
   },
   {
+    name: "Juliette Saint",
+    role: "Paralegal",
+    image: "/imagenes/team/juliette-saint.jpg",
+  },
+  {
     name: "Belen Castro",
     role: "Paralegal, New Jersey",
     image: "/imagenes/team/belen-castro.jpg",
@@ -332,6 +343,11 @@ export const team = [
     name: "María Parra",
     role: "Paralegal, New Jersey",
     image: "/imagenes/team/maria-parra.jpg",
+  },
+  {
+    name: "María Fernanda Albarracín",
+    role: "Paralegal de inmigración",
+    image: null,
   },
   {
     name: "Marcos Hernández",
@@ -365,7 +381,7 @@ export const team = [
   },
   {
     name: "Marlene Piña",
-    role: "Administrativo",
+    role: "Paralegal",
     image: "/imagenes/team/marlene-pina.png",
   },
   {
@@ -379,8 +395,8 @@ export const team = [
     image: "/imagenes/team/marcela-coronel.png",
   },
   {
-    name: "Eylett Hernández",
-    role: "Client Support Coordinator",
+    name: "Eglet Hernández",
+    role: "Coordinadora de Atención al Cliente",
     image: null,
   },
   {

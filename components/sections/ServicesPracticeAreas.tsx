@@ -21,7 +21,11 @@ export default function ServicesPracticeAreas() {
   return (
     <div>
       {practiceAreas.map((area, index) => {
-        const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+        const whatsappNumber =
+          site.whatsappByArea[
+            area.id as keyof typeof site.whatsappByArea
+          ] ?? site.whatsapp;
+        const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           area.whatsappMessage
         )}`;
         const reverse = index % 2 === 1;

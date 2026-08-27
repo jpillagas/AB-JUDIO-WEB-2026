@@ -24,8 +24,8 @@ export default function AboutTeam() {
             Conoce A <span className="text-gold">Nuestro Equipo</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-ink-700">
-            Profesionales comprometidos con tu caso, en nuestras oficinas de
-            Nueva York y Nueva Jersey.
+            Profesionales comprometidos con tu caso en nuestras oficinas de New
+            York, New Jersey y Connecticut.
           </p>
         </ScrollReveal>
 

@@ -32,7 +32,7 @@ export default function PersonalInjuryCitasPage() {
             Volver a elegir área de consulta
           </Link>
 
-          <div className="mt-8 overflow-hidden border border-ink/10 bg-white shadow-[0_12px_40px_rgba(10,10,10,0.06)]">
+          <div className="mt-8 border border-ink/10 bg-white shadow-[0_12px_40px_rgba(10,10,10,0.06)]">
             <div className="px-2 py-4 sm:px-4" data-lenis-prevent>
               <GoHighLevelCalendar
                 src={calendar.widgetSrc}

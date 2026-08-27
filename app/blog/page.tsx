@@ -5,7 +5,7 @@ import CinematicPageHero from "@/components/cinematic/CinematicPageHero";
 import { blogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Noticias",
   description:
     "Artículos, guías y noticias sobre inmigración, asilo, lesiones personales y bienes raíces escritos por el equipo de El Abogado Judio.",
 };
@@ -16,7 +16,7 @@ export default function BlogPage() {
   return (
     <>
       <CinematicPageHero
-        title="Blog"
+        title="Noticias"
         subtitle="Guías, noticias y consejos legales para la comunidad hispana en EE. UU."
         pageKey="blog"
       />
