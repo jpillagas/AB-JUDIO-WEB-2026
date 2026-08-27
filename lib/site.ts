@@ -71,7 +71,7 @@ export const site = {
   ] satisfies Office[],
   serviceArea: ["Nueva York", "Nueva Jersey", "Connecticut"],
   hours: [
-    { day: "Lunes a Viernes", hours: "9:00 AM – 6:00 PM" },
+    { day: "Lunes a Viernes", hours: "10:00 AM – 5:00 PM" },
     { day: "Sábados", hours: "10:00 AM – 2:00 PM" },
     { day: "Domingos", hours: "Cerrado" },
   ],
@@ -124,13 +124,13 @@ export const site = {
     },
     {
       label: "Personal Injury",
-      href: "https://elabogadojudio.com/citas/",
+      href: "/contacto/citas/personal-injury",
       description:
         "Accidentes y lesiones por negligencia. Te ayudamos a reclamar la compensación que mereces.",
     },
     {
       label: "Real Estate",
-      href: "https://elabogadojudio.com/citas/",
+      href: "/contacto/citas/real-estate",
       description:
         "Compra, venta e inversión inmobiliaria con respaldo legal en cada etapa.",
     },
@@ -144,6 +144,20 @@ export const bookingCalendars = {
       "Elige el calendario y la sucursal que mejor se adapten a tu caso migratorio.",
     widgetSrc: "https://link.sedigital.pro/widget/group/X5xQq0CxUxB24dMeoJbT",
     iframeId: "X5xQq0CxUxB24dMeoJbT_1787783224589",
+  },
+  personalInjury: {
+    title: "Citas de Personal Injury",
+    subtitle:
+      "Agenda tu consulta de lesiones personales. Elige el horario que mejor te convenga.",
+    widgetSrc: "https://link.sedigital.pro/widget/booking/fIe3yJeaN1Y3f2QRFhLV",
+    iframeId: "fIe3yJeaN1Y3f2QRFhLV_1787795630133",
+  },
+  realEstate: {
+    title: "Citas de Real Estate",
+    subtitle:
+      "Agenda tu consulta de bienes raíces. Elige el horario que mejor te convenga.",
+    widgetSrc: "https://link.sedigital.pro/widget/booking/J5KXWYZoxhmtscURcHUF",
+    iframeId: "J5KXWYZoxhmtscURcHUF_1787799533869",
   },
 } as const;
 
