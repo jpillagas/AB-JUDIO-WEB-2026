@@ -19,6 +19,10 @@ declare module "lucide-react" {
   export const Instagram: LucideIcon;
   export const ArrowRight: LucideIcon;
   export const ArrowLeft: LucideIcon;
+  export const ChevronDown: LucideIcon;
+  export const ChevronLeft: LucideIcon;
+  export const ChevronRight: LucideIcon;
+  export const Star: LucideIcon;
   export const Check: LucideIcon;
   export const Quote: LucideIcon;
   export const Play: LucideIcon;
@@ -27,4 +31,5 @@ declare module "lucide-react" {
   export const Clock: LucideIcon;
   export const CheckCircle2: LucideIcon;
   export const Loader2: LucideIcon;
+  export const Navigation: LucideIcon;
 }

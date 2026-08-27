@@ -9,10 +9,13 @@ export type Office = {
 };
 
 export const site = {
-  name: "El Abogado Judio",
+  name: "El Abogado Judío",
   legalName: "Neuhauser Law",
-  tagline: "Tu futuro migratorio es nuestra prioridad",
+  tagline:
+    "Defensa Legal Experta en temas migratorios para la Comunidad Hispana en Nueva York, New Jersey y Connecticut.",
   url: "https://elabogadojudio.com",
+  bookingUrl: "https://elabogadojudio.com/citas/",
+  bookingSectionHref: "/contacto#agendar-cita",
   phoneDisplay: "+1 (718) 919 9000",
   phoneRaw: "+17189199000",
   email: "info@elabogadojudio.com",
@@ -78,29 +81,76 @@ export const site = {
     tiktok: "https://tiktok.com/@elabogadojudio",
   },
   stats: [
-    { value: 10, suffix: "+", label: "Abogados Expertos" },
-    { value: 90, suffix: "%", label: "Casos Ganados" },
-    { value: 100, suffix: "%", label: "Clientes Felices" },
-    { value: 20, suffix: "+", label: "Servicios Legales" },
+    {
+      value: 15,
+      prefix: "+",
+      suffix: "",
+      label: "Años de Experiencia",
+      description: "Trayectoria comprobada en cortes migratorias.",
+    },
+    {
+      value: 5000,
+      prefix: "+",
+      suffix: "",
+      label: "Familias Unidas",
+      description: "Casos de éxito y residencias aprobadas.",
+    },
+    {
+      value: 3,
+      prefix: "",
+      suffix: "",
+      label: "Estados Licenciados",
+      description: "Práctica activa en NY, NJ y Connecticut.",
+    },
   ],
   navigation: [
     { label: "Inicio", href: "/" },
     { label: "Nosotros", href: "/nosotros" },
     { label: "Servicios", href: "/servicios" },
-    { label: "Contacto", href: "/contacto" },
+    { label: "Contactos", href: "/contacto" },
     { label: "Noticias", href: "/blog" },
   ],
+  servicesSubmenu: [
+    { label: "Inmigración", href: "/servicios#inmigracion" },
+    { label: "Personal Injury", href: "/servicios#personal-injury" },
+    { label: "Real Estate", href: "/servicios#real-estate" },
+  ],
   bookingAreas: [
-    { label: "Inmigración", href: "https://elabogadojudio.com/citas/" },
-    { label: "Personal Injury", href: "https://elabogadojudio.com/citas/" },
-    { label: "Real Estate", href: "https://elabogadojudio.com/citas/" },
+    {
+      label: "Inmigración",
+      href: "/contacto/citas/inmigracion",
+      description:
+        "Visas, residencia permanente, ciudadanía y defensa en procesos de deportación.",
+    },
+    {
+      label: "Personal Injury",
+      href: "https://elabogadojudio.com/citas/",
+      description:
+        "Accidentes y lesiones por negligencia. Te ayudamos a reclamar la compensación que mereces.",
+    },
+    {
+      label: "Real Estate",
+      href: "https://elabogadojudio.com/citas/",
+      description:
+        "Compra, venta e inversión inmobiliaria con respaldo legal en cada etapa.",
+    },
   ],
 };
 
+export const bookingCalendars = {
+  inmigracion: {
+    title: "Citas de Inmigración",
+    subtitle:
+      "Elige el calendario y la sucursal que mejor se adapten a tu caso migratorio.",
+    widgetSrc: "https://link.sedigital.pro/widget/group/X5xQq0CxUxB24dMeoJbT",
+    iframeId: "X5xQq0CxUxB24dMeoJbT_1787783224589",
+  },
+} as const;
+
 export const expertiseAreas = [
   { name: "Inmigración", percent: 99 },
-  { name: "Lesiones Personales", percent: 98 },
-  { name: "Bienes Raíces", percent: 97 },
+  { name: "Personal Injury", percent: 98 },
+  { name: "Real Estate", percent: 97 },
 ];
 
 export const mainServices = [
@@ -108,139 +158,277 @@ export const mainServices = [
     number: "01",
     title: "Inmigración",
     description:
-      "Asesoría legal experta para obtener visas, residencia, ciudadanía o defensa en procesos de deportación.",
+      "Brindamos asesoría legal experta en procesos migratorios en Estados Unidos, ayudando a personas y familias a obtener visas, residencia permanente, ciudadanía estadounidense y representación legal en casos de deportación o remoción.",
     href: "/servicios#inmigracion",
   },
   {
     number: "02",
-    title: "Lesiones Personales",
+    title: "Personal Injury | Abogado de Lesiones Personales",
     description:
-      "Reclamos por accidentes o negligencia, incluyendo caídas por resbalones (slip and fall) y tropiezos (trip and fall).",
-    href: "/servicios#lesiones",
+      "Representamos a personas lesionadas por accidentes o por la negligencia de terceros. Nuestro equipo legal le ayuda a presentar reclamos por compensación y a proteger sus derechos después de una lesión.",
+    href: "/servicios#personal-injury",
   },
   {
     number: "03",
-    title: "Bienes Raíces",
+    title: "Real Estate | Abogados de Bienes Raíces",
     description:
-      "Asistencia legal en la compra, venta y protección de propiedades, con total seguridad jurídica.",
-    href: "/servicios#bienes-raices",
+      "Asesoría y representación legal en compra, venta e inversión de propiedades, protegiendo tus intereses con seguridad jurídica en cada paso.",
+    href: "/servicios#real-estate",
   },
 ];
 
-export const uscisServices = [
+export const practiceAreas = [
   {
-    n: "01",
-    title: "Permiso De Trabajo (EAD)",
-    desc: "Asesoramiento y gestión para obtener autorizaciones de empleo para inmigrantes elegibles.",
+    id: "inmigracion",
+    title: "Inmigración",
+    eyebrow: "Inmigración | Abogados de Inmigración en Estados Unidos",
+    lead: "¿Buscas regularizar tu estatus migratorio o proteger tu futuro en Estados Unidos?",
+    body: "En El Abogado Judío brindamos asesoría y representación legal en diferentes procesos migratorios, acompañándote en cada etapa y evaluando las opciones disponibles para tu caso.",
+    listLabel: "Nuestros servicios incluyen:",
+    items: [
+      "Solicitud y renovación de visas",
+      "Residencia permanente (Green Card)",
+      "Ciudadanía y naturalización",
+      "Peticiones familiares",
+      "Permisos de trabajo",
+      "Asilo y otras formas de protección migratoria",
+      "Defensa en procesos de deportación o remoción",
+      "Reapertura y revisión de casos migratorios",
+    ],
+    closing:
+      "Cada caso migratorio es diferente. Conoce tus opciones antes de tomar una decisión.",
+    whatsappMessage:
+      "Hola, vengo desde el sitio web y quiero agendar una consulta de Inmigración.",
+    image:
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    n: "02",
-    title: "Visa De Trabajo",
-    desc: "Trámites de visas de trabajo temporales o permanentes para extranjeros que buscan trabajar legalmente en el país.",
+    id: "personal-injury",
+    title: "Personal Injury",
+    eyebrow: "Personal Injury | Abogado de Lesiones Personales",
+    lead: "¿Sufriste una lesión debido a un accidente o a la negligencia de otra persona? Podrías tener derecho a reclamar una compensación.",
+    body: "En El Abogado Judío evaluamos tu caso y te brindamos representación legal para ayudarte a proteger tus derechos y buscar la compensación que corresponda.",
+    listLabel: "Atendemos casos de:",
+    items: [
+      "Accidentes de auto y tránsito",
+      "Caídas, resbalones y tropiezos",
+      "Accidentes de construcción",
+      "Lesiones por negligencia",
+      "Accidentes en propiedades comerciales o residenciales",
+      "Lesiones causadas por condiciones inseguras",
+    ],
+    closing:
+      "No enfrentes las consecuencias de una lesión sin conocer tus derechos.",
+    whatsappMessage:
+      "Hola, vengo desde el sitio web y quiero agendar una consulta de Personal Injury.",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    n: "03",
-    title: "TPS",
-    desc: "Representación para solicitar o renovar el Estatus de Protección Temporal, otorgado a ciudadanos de países con condiciones peligrosas.",
-  },
-  {
-    n: "04",
-    title: "Petición Familiar",
-    desc: "Peticiones para cónyuges, hijos, padres y otros familiares calificados por residencia permanente.",
-  },
-  {
-    n: "05",
-    title: "Ciudadanía",
-    desc: "Representación legal en el proceso de naturalización para convertirte en ciudadano estadounidense.",
-  },
-  {
-    n: "06",
-    title: "Green Card",
-    desc: "Tramitación de solicitudes para obtener la residencia permanente legal a través de peticiones familiares o laborales.",
-  },
-  {
-    n: "07",
-    title: "VAWA",
-    desc: "Asistencia legal a víctimas de violencia doméstica que buscan obtener estatus migratorio independiente de su agresor.",
-  },
-  {
-    n: "08",
-    title: "Visa U",
-    desc: "Ayuda para víctimas de crímenes graves que cooperan con las autoridades en la investigación o procesamiento del delito.",
-  },
-  {
-    n: "09",
-    title: "Estatus Juvenil",
-    desc: "Representación para menores inmigrantes que han sido abandonados, abusados o descuidados y buscan protección legal.",
-  },
-  {
-    n: "10",
-    title: "Waiver",
-    desc: "Asesoría y trámites para el perdón por presencia ilegal en los Estados Unidos.",
-  },
-];
-
-export const courtServices = [
-  {
-    n: "01",
-    title: "Cancelación De Deportación",
-    desc: "Defendemos a inmigrantes en proceso de deportación mediante recursos legales que permiten solicitar la permanencia en EE. UU., cumpliendo requisitos como tiempo de residencia, buen carácter moral y prueba de perjuicio extremo a familiares ciudadanos o residentes.",
-  },
-  {
-    n: "02",
-    title: "Mociones De Apertura",
-    desc: "Es una solicitud presentada ante el juez de inmigración para reabrir un caso cerrado o finalizado. Generalmente se utiliza cuando hay nueva evidencia, cambios en las circunstancias o errores legales en el proceso anterior.",
-  },
-  {
-    n: "03",
-    title: "Asilo",
-    desc: "Protección para personas que han sufrido persecución por su raza, religión, nacionalidad, opinión política o grupo social. El solicitante debe probar que no puede regresar a su país de origen.",
-  },
-  {
-    n: "04",
-    title: "Detención De Remoción",
-    desc: "Cuando un inmigrante es detenido mientras enfrenta su deportación, durante esta etapa puede solicitar fianza y presentar defensas legales para evitar su remoción.",
-  },
-  {
-    n: "05",
-    title: "Deportation Order",
-    desc: "Es una orden final que obliga al inmigrante a salir de EE. UU. Puede ser ejecutada a menos que se presente una apelación o se obtenga una suspensión.",
+    id: "real-estate",
+    title: "Real Estate",
+    eyebrow: "Bienes Raíces | Abogados de Real Estate",
+    lead: "¿Estás comprando, vendiendo o invirtiendo en una propiedad?",
+    body: "En El Abogado Judío brindamos asesoría y representación legal en operaciones de bienes raíces, ayudándote a proteger tus intereses y a tomar decisiones con mayor seguridad jurídica.",
+    listLabel: "Nuestros servicios incluyen:",
+    items: [
+      "Compra y venta de propiedades",
+      "Revisión y preparación de contratos",
+      "Cierres de compraventa (closing)",
+      "Revisión de documentos legales",
+      "Protección de tus intereses durante la transacción",
+      "Asesoría en operaciones inmobiliarias",
+    ],
+    closing:
+      "Una propiedad es una gran inversión. Asegúrate de contar con respaldo legal en cada paso.",
+    whatsappMessage:
+      "Hola, vengo desde el sitio web y quiero agendar una consulta de Real Estate.",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 export const team = [
-  { name: "Mark Neuhauser", role: "CEO – Abogado" },
-  { name: "Gabriel Castro", role: "Manager General" },
-  { name: "Leiny Ruiz", role: "Abogada de Inmigración" },
-  { name: "Mateo Garzón", role: "Manager" },
-  { name: "Juan Carlos Miranda", role: "Director de Comunicación" },
-  { name: "Karla Dávalos", role: "Paralegal Senior, Nueva York" },
-  { name: "Bridgette Mena", role: "Paralegal Senior, Nueva York" },
-  { name: "Jessica Humala", role: "Paralegal Senior, Nueva York" },
-  { name: "Eniris Brito", role: "Paralegal, Nueva York" },
-  { name: "Antonella Orejuela", role: "Paralegal, Nueva York" },
-  { name: "Rajinder Kaur", role: "Paralegal, Nueva York" },
-  { name: "Belen Castro", role: "Paralegal, Nueva Jersey" },
-  { name: "María Parra", role: "Paralegal, Nueva Jersey" },
-  { name: "Marlene Piña", role: "Administrativo" },
-  { name: "Cristi Villavicencio", role: "Asistente Administrativo" },
-  { name: "Marcela Coronel", role: "Asistente Administrativo" },
-];
+  {
+    name: "Mark Neuhauser",
+    role: "CEO – Abogado",
+    image: "/imagenes/team/mark-neuhauser.jpg",
+  },
+  {
+    name: "Gabriel Castro",
+    role: "Manager General",
+    image: "/imagenes/team/gabriel-castro.jpg",
+  },
+  {
+    name: "Jenny Pardo",
+    role: "Regional Manager",
+    image: null,
+  },
+  {
+    name: "Mateo Garzón",
+    role: "Manager",
+    image: "/imagenes/team/mateo-garzon.jpg",
+  },
+  {
+    name: "Alejandro Navarro",
+    role: "Director de Marketing y producción",
+    image: null,
+  },
+  {
+    name: "Juan Carlos Miranda",
+    role: "Director de Comunicación",
+    image: "/imagenes/team/juan-carlos-miranda.jpg",
+  },
+  {
+    name: "Luis Chávez",
+    role: "Digital Strategist & Media Buyer",
+    image: null,
+  },
+  {
+    name: "Rajinder Kaur",
+    role: "Abogada de Inmigración",
+    image: "/imagenes/team/rajinder-kaur.jpg",
+  },
+  {
+    name: "Anastasia Le",
+    role: "Attorney",
+    image: null,
+  },
+  {
+    name: "Jessica Humala",
+    role: "Paralegal Senior, New York",
+    image: "/imagenes/team/jessica-humala.jpg",
+  },
+  {
+    name: "Eniris Brito",
+    role: "Paralegal, New York",
+    image: "/imagenes/team/eniris-brito.jpg",
+  },
+  {
+    name: "Antonella Orejuela",
+    role: "Paralegal, New York",
+    image: "/imagenes/team/antonella-orejuela.jpg",
+  },
+  {
+    name: "Belen Castro",
+    role: "Paralegal, New Jersey",
+    image: "/imagenes/team/belen-castro.jpg",
+  },
+  {
+    name: "María Parra",
+    role: "Paralegal, New Jersey",
+    image: "/imagenes/team/maria-parra.jpg",
+  },
+  {
+    name: "Marcos Hernández",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Ana Hinojosa",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Carlota López",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Ana Cecilia Barbosa",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Melissa Zárate",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Sebastián Vargas",
+    role: "Paralegal",
+    image: null,
+  },
+  {
+    name: "Marlene Piña",
+    role: "Administrativo",
+    image: "/imagenes/team/marlene-pina.png",
+  },
+  {
+    name: "Cristi Villavicencio",
+    role: "Asistente administrativo",
+    image: "/imagenes/team/cristi-villavicencio.png",
+  },
+  {
+    name: "Marcela Coronel",
+    role: "Asistente administrativo",
+    image: "/imagenes/team/marcela-coronel.png",
+  },
+  {
+    name: "Eylett Hernández",
+    role: "Client Support Coordinator",
+    image: null,
+  },
+  {
+    name: "Arlette Bermeo",
+    role: "Reception",
+    image: null,
+  },
+  {
+    name: "Nathalia Osorio",
+    role: "Reception",
+    image: null,
+  },
+] as const;
 
+/** Reseñas reales (contenido tomado de Google Reviews) */
 export const testimonials = [
   {
-    name: "Juan Pérez",
-    role: "Indocumentado",
-    text: "Los abogados son muy profesionales y me solucionaron mi visa de trabajo de una manera rápida y sin mucho papeleo.",
+    name: "Lucresia Urquilla",
+    rating: 5,
+    timeAgo: "hace 2 meses",
+    text: "Son unos muy buenos abogados estoy súper agradecida con ellos, ha salido súper bien en el caso de mi hijo, se los recomiendo al cien. Tienen personal muy amable. Especialmente Belén es súper amable, gracias.",
   },
   {
-    name: "María González",
-    role: "Residente Permanente",
-    text: "Gracias al equipo de El Abogado Judio pude reunirme con mi familia. Su acompañamiento fue humano y experto en cada paso.",
+    name: "Isaac Tituaña",
+    rating: 5,
+    timeAgo: "hace 5 meses",
+    text: "Inicié mi proceso con la firma y ha sido toda una aventura, son personas muy capaces y atentas. Siempre están para responder mis preguntas, especialmente Belén ha sido de gran ayuda.",
   },
   {
-    name: "Carlos Ramírez",
-    role: "Solicitante de Asilo",
-    text: "Llegué sin esperanza y salí con una protección legal. Comunicación clara, honestidad y resultados. Los recomiendo de corazón.",
+    name: "Veronica R",
+    rating: 5,
+    timeAgo: "hace 1 mes",
+    text: "Acabo de recibir mi aprobación de estatus juvenil, estoy muy agradecida con ustedes en especial con Belén por todo su trabajo en mi caso.",
+  },
+  {
+    name: "Angelica Torres",
+    rating: 5,
+    timeAgo: "hace 5 meses",
+    text: "María Albarracin muy buena persona, amable, educada. Contestó todas mis preguntas.",
+  },
+  {
+    name: "Edison Suarez",
+    rating: 5,
+    timeAgo: "hace 2 meses",
+    text: "Excelente atención, saben del tema y son muy profesionales.",
+  },
+  {
+    name: "Michelle Rosales",
+    rating: 5,
+    timeAgo: "hace 8 meses",
+    text: "Súper recomendable. Maria Fernando muy amables, respondió todas mis dudas, muy buen trato, te explican todo súper bien, te presta mucha confianza. Súper recomendable, me encantó.",
+  },
+  {
+    name: "Neris Granados",
+    rating: 5,
+    timeAgo: "hace 5 meses",
+    text: "Yo los recomiendo al 100. Hacer lo correcto es parte de su ADN. Honestidad, precisión y eficiencia los caracteriza. Bien por aquellos que hemos dejado nuestros casos en sus manos. Éxitos siempre.",
+  },
+  {
+    name: "Alfonsina Niama",
+    rating: 5,
+    timeAgo: "hace 4 meses",
+    text: "Excelente y rápido servicio, desde el primer día me brindaron la seguridad y certeza de que todo saldría bien con mi caso. Tuve acompañamiento durante todo el proceso, con un nivel de profesionalismo excepcional. Mi equipo estuvo conformado por la paralegal Anacecilia y la abogada Leiny, de quienes estoy muy agradecida. Mil gracias, han cambiado mi vida.",
   },
 ];

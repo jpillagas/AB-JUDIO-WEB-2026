@@ -1,12 +1,17 @@
 // lib/media.ts
 export const media = {
-  logo: "/imagenes/logo.png",
-  logoHeader: "/imagenes/LogoPrincipal.png",
-  logoDark: "/imagenes/logo-dark.png",
+  /** Logo blanco — fondos oscuros (header, footer) */
+  logo: "/imagenes/logo-blanco-abogado-judio-v2.png",
+  /** Logo negro — fondos claros */
+  logoHeader: "/imagenes/logo-negro-abogado-judio-v2.png",
+  logoDark: "/imagenes/logo-negro-abogado-judio-v2.png",
+  /** Neuhauser Law PLLC — blanco / negro */
+  logoNeuhauser: "/imagenes/NEUHASERLAWpllc-LOGO-blanco.png",
+  logoNeuhauserDark: "/imagenes/NEUHASERLAWpllc-LOGO-negro.png",
   hero: {
     background:
       "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=2400&q=80",
-    portrait: "/imagenes/mark-neuhauser.png",
+    portrait: "/imagenes/markPortada.png",
   },
   pageHeroes: {
     nosotros:
@@ -19,8 +24,7 @@ export const media = {
       "https://images.unsplash.com/photo-1455390572262-044cdead277a?auto=format&fit=crop&w=2400&q=80",
   },
   sections: {
-    whyUs:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+    whyUs: "/imagenes/SeccioNuestrosClientes.png",
     testimonials:
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
     cta:

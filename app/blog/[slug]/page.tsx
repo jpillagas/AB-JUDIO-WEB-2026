@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { blogPosts, getPost } from "@/lib/blog";
+import { site } from "@/lib/site";
 
 interface Props {
   params: { slug: string };
@@ -69,7 +70,7 @@ export default function PostPage({ params }: Props) {
               Cada situación es única. Agenda una consulta gratuita con nuestro
               equipo y te orientamos con honestidad sobre tus opciones.
             </p>
-            <Link href="/contacto" className="btn-primary mt-6">
+            <Link href={site.bookingSectionHref} className="btn-primary mt-6">
               Agendar consulta gratis
             </Link>
           </div>

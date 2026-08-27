@@ -68,6 +68,10 @@ html.lenis body {
     @apply inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-medium uppercase tracking-widest text-white backdrop-blur transition hover:bg-white/10;
   }
 
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/50 bg-transparent px-7 py-3.5 text-sm font-medium uppercase tracking-widest text-white/90 transition hover:border-white hover:bg-white/5 hover:text-white;
+  }
+
   .btn-dark {
     @apply inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium uppercase tracking-widest text-bone transition hover:bg-ink-700;
   }
@@ -161,9 +165,91 @@ html.lenis body {
   height: 100%;
   width: 100%;
   background: #1a1a1a;
+  /* Evita que los panes de Leaflet (z-index 200–800) tapen el header fixed (z-50) */
+  z-index: 0 !important;
+}
+
+.contact-map .leaflet-pane,
+.contact-map .leaflet-control,
+.contact-map .leaflet-top,
+.contact-map .leaflet-bottom {
+  z-index: auto !important;
+}
+
+.contact-map .leaflet-tile-pane {
   filter: grayscale(0.85) contrast(1.08);
+  z-index: 1 !important;
+}
+
+.contact-map .leaflet-overlay-pane {
+  z-index: 2 !important;
+}
+
+.contact-map .leaflet-marker-pane {
+  z-index: 3 !important;
+}
+
+.contact-map .leaflet-tooltip-pane,
+.contact-map .leaflet-popup-pane {
+  z-index: 4 !important;
+}
+
+.contact-map .leaflet-control-container {
+  z-index: 5 !important;
 }
 
 .contact-map .leaflet-control-attribution {
   font-size: 10px;
+}
+
+.office-pin-wrap {
+  background: transparent !important;
+  border: none !important;
+}
+
+.office-pin {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  background: #c9a86a;
+  border: 2px solid #0a0a0a;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 6px 16px rgba(10, 10, 10, 0.45);
+}
+
+.office-pin::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0a0a0a;
+}
+
+.office-pin--active {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  background: #c9a86a;
+  box-shadow: 0 0 0 6px rgba(201, 168, 106, 0.35),
+    0 10px 22px rgba(10, 10, 10, 0.5);
+}
+
+.office-pin--active::after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .office-pin--active {
+    box-shadow: 0 0 0 4px rgba(201, 168, 106, 0.4),
+      0 8px 18px rgba(10, 10, 10, 0.45);
+  }
 }

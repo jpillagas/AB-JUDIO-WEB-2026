@@ -25,18 +25,17 @@ export default function HomeServices() {
   }, [reduced]);
 
   return (
-    <section className="relative bg-ink py-24 text-bone lg:py-32">
+    <section className="relative bg-bone pb-24 pt-16 text-ink sm:pt-64 lg:pb-32 lg:pt-72">
       <div className="container-x">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <span className="eyebrow">+ Nuestros servicios</span>
-            <h2 className="display-2 mt-4 text-white">
+            <h2 className="display-2 text-ink">
               Nuestros Servicios Abarcan Varias Áreas Legales
             </h2>
           </div>
           <div className="lg:col-span-6 lg:pl-8">
-            <p className="text-base leading-relaxed text-bone/60">
-              En El Abogado Judio brindamos asesoría y representación legal
+            <p className="text-base leading-relaxed text-ink-700">
+              En El Abogado Judío brindamos asesoría y representación legal
               enfocada a las necesidades de la comunidad de habla hispana en
               Nueva York, Nueva Jersey y Connecticut. Nuestro equipo se concentra
               en áreas clave para ofrecerte el apoyo que necesitas.
@@ -46,23 +45,23 @@ export default function HomeServices() {
 
         <div
           ref={cardsRef}
-          className="mt-16 grid gap-px bg-white/10 lg:grid-cols-3"
+          className="mt-16 grid gap-px bg-ink/10 lg:grid-cols-3"
         >
           {mainServices.map((s) => (
             <div
               key={s.number}
-              className="group bg-ink p-8 transition duration-300 hover:-translate-y-1 hover:bg-ink-800 hover:ring-1 hover:ring-gold/50 lg:p-10"
+              className="group bg-bone p-8 transition duration-300 hover:-translate-y-1 hover:bg-white hover:ring-1 hover:ring-gold/50 lg:p-10"
             >
               <div className="flex items-baseline gap-3">
-                <span className="font-display text-5xl font-semibold text-white">
+                <span className="font-display text-5xl font-semibold text-ink">
                   {s.number}
                 </span>
                 <span className="h-2 w-2 rounded-full bg-gold transition group-hover:scale-150" />
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-white">
+              <h3 className="mt-5 font-display text-xl font-semibold text-ink">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-bone/60">
+              <p className="mt-3 text-sm leading-relaxed text-ink-700">
                 {s.description}
               </p>
               <Link

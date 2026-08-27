@@ -1,20 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { team } from "@/lib/site";
 import ScrollReveal from "@/components/ScrollReveal";
 
-// Imágenes placeholder genéricas profesionales (se pueden reemplazar luego con las reales del despacho)
-const portraitPool = [
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1541823709867-1b206113eafd?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-];
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
 export default function AboutTeam() {
   return (
@@ -26,8 +24,8 @@ export default function AboutTeam() {
             Conoce A <span className="text-gold">Nuestro Equipo</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm text-ink-700">
-            Más de 16 profesionales comprometidos con tu caso, distribuidos en
-            nuestras oficinas de Nueva York y Nueva Jersey.
+            Profesionales comprometidos con tu caso, en nuestras oficinas de
+            Nueva York y Nueva Jersey.
           </p>
         </ScrollReveal>
 
@@ -42,12 +40,21 @@ export default function AboutTeam() {
               className="group"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-ink-800">
-                <div
-                  className="absolute inset-0 bg-cover bg-center grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                  style={{
-                    backgroundImage: `url(${portraitPool[i % portraitPool.length]})`,
-                  }}
-                />
+                {person.image ? (
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover object-top grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-ink-700 to-ink">
+                    <span className="font-display text-3xl font-semibold tracking-wide text-gold/80 sm:text-4xl">
+                      {initials(person.name)}
+                    </span>
+                  </div>
+                )}
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/90 to-transparent" />
               </div>
               <div className="mt-4">

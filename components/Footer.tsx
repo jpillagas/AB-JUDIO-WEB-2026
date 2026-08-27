@@ -17,7 +17,12 @@ export default function Footer() {
       <div className="container-x py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Logo imageClassName="h-12 w-auto sm:h-14" />
+            <Logo
+              variant="light"
+              dual
+              imageClassName="h-[34px] sm:h-[39px] max-w-[95px] sm:max-w-[110px]"
+              partnerImageClassName="h-[38px] sm:h-[44px] max-w-[140px] sm:max-w-[160px]"
+            />
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-bone/60">
               Contáctanos o agenda una cita presencial. Defendemos tus derechos
@@ -75,18 +80,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/servicios#lesiones" className="text-bone/60 hover:text-white">
-                  Lesiones Personales
+                <Link href="/servicios#personal-injury" className="text-bone/60 hover:text-white">
+                  Personal Injury
                 </Link>
               </li>
               <li>
-                <Link href="/servicios#bienes-raices" className="text-bone/60 hover:text-white">
-                  Bienes Raíces
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicios#corte" className="text-bone/60 hover:text-white">
-                  Corte de Inmigración
+                <Link href="/servicios#real-estate" className="text-bone/60 hover:text-white">
+                  Real Estate
                 </Link>
               </li>
             </ul>

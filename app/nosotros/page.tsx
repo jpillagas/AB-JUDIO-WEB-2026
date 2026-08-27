@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import CinematicPageHero from "@/components/cinematic/CinematicPageHero";
 import AboutIntro from "@/components/sections/AboutIntro";
-import AboutQuote from "@/components/sections/AboutQuote";
 import AboutTeam from "@/components/sections/AboutTeam";
 
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "Conoce al equipo de El Abogado Judio – Neuhauser Law. Una firma legal comprometida con la comunidad hispana en Nueva York, Nueva Jersey y Connecticut.",
+    "Conoce al equipo de El Abogado Judío – Neuhauser Law. Una firma legal comprometida con la comunidad hispana en Nueva York, Nueva Jersey y Connecticut.",
 };
 
 export default function NosotrosPage() {
@@ -19,7 +18,6 @@ export default function NosotrosPage() {
         pageKey="nosotros"
       />
       <AboutIntro />
-      <AboutQuote />
       <AboutTeam />
     </>
   );

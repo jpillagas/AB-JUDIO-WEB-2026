@@ -4,11 +4,17 @@ import { useEffect, useRef, useState } from "react";
 
 interface Props {
   to: number;
+  prefix?: string;
   suffix?: string;
   duration?: number;
 }
 
-export default function AnimatedCounter({ to, suffix = "", duration = 1800 }: Props) {
+export default function AnimatedCounter({
+  to,
+  prefix = "",
+  suffix = "",
+  duration = 1800,
+}: Props) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLSpanElement | null>(null);
   const startedRef = useRef(false);
@@ -41,7 +47,8 @@ export default function AnimatedCounter({ to, suffix = "", duration = 1800 }: Pr
 
   return (
     <span ref={ref}>
-      {value}
+      {prefix}
+      {value.toLocaleString("en-US")}
       {suffix}
     </span>
   );

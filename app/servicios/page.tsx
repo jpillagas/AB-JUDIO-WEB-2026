@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import CinematicPageHero from "@/components/cinematic/CinematicPageHero";
-import ServicesIntro from "@/components/sections/ServicesIntro";
-import ServicesUSCIS from "@/components/sections/ServicesUSCIS";
-import ServicesCourt from "@/components/sections/ServicesCourt";
+import ServicesPracticeAreas from "@/components/sections/ServicesPracticeAreas";
 
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Servicios legales en inmigración, lesiones personales y bienes raíces: EAD, Visa de Trabajo, TPS, Petición Familiar, Ciudadanía, Green Card, VAWA, Visa U, Estatus Juvenil, Waiver, asilo y más.",
+    "Servicios legales en Inmigración, Personal Injury y Real Estate para la comunidad hispana en Nueva York, New Jersey y Connecticut.",
 };
 
 export default function ServiciosPage() {
@@ -15,12 +13,10 @@ export default function ServiciosPage() {
     <>
       <CinematicPageHero
         title="Servicios"
-        subtitle="Inmigración, lesiones personales y bienes raíces."
+        subtitle="Inmigración, Personal Injury y Real Estate."
         pageKey="servicios"
       />
-      <ServicesIntro />
-      <ServicesUSCIS />
-      <ServicesCourt />
+      <ServicesPracticeAreas />
     </>
   );
 }

@@ -5,18 +5,16 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import { site } from "@/lib/site";
 import { animateReveal } from "@/lib/animations/scroll-reveal";
 import { useReducedMotion } from "@/lib/animations/useReducedMotion";
-import { gsap, registerGsap } from "@/lib/animations/gsap-setup";
 
 export default function HomeStats() {
   const gridRef = useRef<HTMLDivElement>(null);
-  const lineRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
     if (!gridRef.current) return;
     const tween = animateReveal(gridRef.current, {
       variant: "stagger",
-      stagger: 0.15,
+      stagger: 0.1,
       reducedMotion: reduced,
     });
     return () => {
@@ -25,49 +23,34 @@ export default function HomeStats() {
     };
   }, [reduced]);
 
-  useEffect(() => {
-    if (!lineRef.current || reduced) return;
-    registerGsap();
-    const tween = gsap.fromTo(
-      lineRef.current,
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: lineRef.current,
-          start: "top 90%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-    return () => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-    };
-  }, [reduced]);
-
   return (
-    <section className="bg-ink text-white">
-      <div
-        ref={lineRef}
-        className="gold-line origin-left"
-        aria-hidden
-      />
+    <section
+      aria-label="Estadísticas"
+      className="relative z-30 bg-black px-0 pb-6 pt-2 sm:h-0 sm:overflow-visible sm:bg-transparent sm:pb-0 sm:pt-0"
+    >
       <div
         ref={gridRef}
-        className="container-x grid grid-cols-2 gap-8 py-12 lg:grid-cols-4 lg:py-16"
+        className="container-x relative grid grid-cols-1 gap-4 sm:-translate-y-12 sm:grid-cols-3 sm:gap-5 lg:-translate-y-14"
       >
         {site.stats.map((stat) => (
-          <div key={stat.label} className="text-center lg:text-left">
-            <div className="font-display text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-              <AnimatedCounter to={stat.value} suffix={stat.suffix} />
+          <article
+            key={stat.label}
+            className="rounded-xl border border-white/10 border-t-2 border-t-gold bg-black/70 px-5 py-8 text-center shadow-2xl shadow-black/50 backdrop-blur-md sm:px-6 sm:py-9 lg:py-10"
+          >
+            <div className="font-display text-[2.7rem] font-semibold leading-none tracking-tight text-gold sm:text-[3.6rem]">
+              <AnimatedCounter
+                to={stat.value}
+                prefix={stat.prefix}
+                suffix={stat.suffix}
+              />
             </div>
-            <div className="mt-2 text-xs uppercase tracking-[0.25em] text-bone/50">
+            <div className="mt-3 text-sm font-semibold text-white">
               {stat.label}
             </div>
-          </div>
+            <p className="mt-2 text-xs leading-relaxed text-white/70">
+              {stat.description}
+            </p>
+          </article>
         ))}
       </div>
     </section>

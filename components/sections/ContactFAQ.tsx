@@ -32,7 +32,7 @@ export default function ContactFAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-bone py-24 lg:py-32">
+    <section className="bg-bone pb-24 pt-6 lg:pb-32 lg:pt-8">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <ScrollReveal className="lg:col-span-4">
           <span className="eyebrow">+ Preguntas frecuentes</span>

@@ -3,17 +3,15 @@ import HomeStats from "@/components/sections/HomeStats";
 import HomeWhyUs from "@/components/sections/HomeWhyUs";
 import HomeServices from "@/components/sections/HomeServices";
 import HomeTestimonials from "@/components/sections/HomeTestimonials";
-import HomeCTA from "@/components/sections/HomeCTA";
 
 export default function HomePage() {
   return (
     <>
       <HomeHero />
       <HomeStats />
-      <HomeWhyUs />
       <HomeServices />
+      <HomeWhyUs />
       <HomeTestimonials />
-      <HomeCTA />
     </>
   );
 }

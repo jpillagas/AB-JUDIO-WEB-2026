@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { Office } from "@/lib/site";
 
-const icon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-});
+function pinIcon(active: boolean) {
+  return L.divIcon({
+    className: "office-pin-wrap",
+    html: `<span class="office-pin${active ? " office-pin--active" : ""}"></span>`,
+    iconSize: active ? [32, 42] : [28, 36],
+    iconAnchor: active ? [16, 42] : [14, 36],
+    popupAnchor: [0, -36],
+  });
+}
 
 function useCoarsePointer(): boolean {
   const [isCoarse, setIsCoarse] = useState(
@@ -81,6 +82,8 @@ export default function ContactOfficesMap({
 }) {
   const center: [number, number] = [41.0, -73.6];
   const isCoarse = useCoarsePointer();
+  const idleIcon = useMemo(() => pinIcon(false), []);
+  const activeIcon = useMemo(() => pinIcon(true), []);
 
   return (
     <div
@@ -101,20 +104,24 @@ export default function ContactOfficesMap({
         />
         <MapSync offices={offices} selectedId={selectedId} />
         <MapDraggingSync enabled={!isCoarse} />
-        {offices.map((office) => (
-          <Marker
-            key={office.id}
-            position={[office.lat, office.lng]}
-            icon={icon}
-            eventHandlers={{ click: () => onSelect(office.id) }}
-          >
-            <Popup>
-              <strong>{office.name}</strong>
-              <br />
-              {office.address}
-            </Popup>
-          </Marker>
-        ))}
+        {offices.map((office) => {
+          const active = selectedId === office.id;
+          return (
+            <Marker
+              key={office.id}
+              position={[office.lat, office.lng]}
+              icon={active ? activeIcon : idleIcon}
+              zIndexOffset={active ? 600 : 0}
+              eventHandlers={{ click: () => onSelect(office.id) }}
+            >
+              <Popup>
+                <strong>{office.name}</strong>
+                <br />
+                {office.address}
+              </Popup>
+            </Marker>
+          );
+        })}
       </MapContainer>
     </div>
   );

@@ -44,7 +44,7 @@ export default function HomeCTA() {
   }, [reduced]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-ink via-ink-800 to-ink py-24">
+    <section className="relative overflow-hidden bg-ink py-24 text-white">
       <div
         ref={bgRef}
         className="absolute inset-0 overflow-hidden opacity-15 grayscale"
@@ -53,7 +53,7 @@ export default function HomeCTA() {
       </div>
       <div
         ref={contentRef}
-        className="container-x relative grid items-center gap-8 text-white lg:grid-cols-12"
+        className="container-x relative grid items-center gap-8 lg:grid-cols-12"
       >
         <div className="lg:col-span-8">
           <span className="eyebrow">+ Hablemos hoy</span>
@@ -68,7 +68,7 @@ export default function HomeCTA() {
             <Phone className="h-4 w-4" />
             Llamar
           </a>
-          <Link href="/contacto" className="btn-primary animate-gold-pulse">
+          <Link href={site.bookingSectionHref} className="btn-primary animate-gold-pulse">
             Agendar Cita <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
