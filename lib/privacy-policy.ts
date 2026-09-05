@@ -1,4 +1,15 @@
-export const privacyPolicy = {
+export type PrivacySection = {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  closing?: string;
+};
+
+export const privacyPolicy: {
+  lastUpdated: string;
+  lastUpdatedIso: string;
+  sections: PrivacySection[];
+} = {
   lastUpdated: "5 de septiembre de 2026",
   lastUpdatedIso: "2026-09-05",
   sections: [
@@ -146,4 +157,4 @@ export const privacyPolicy = {
       ],
     },
   ],
-} as const;
+};
