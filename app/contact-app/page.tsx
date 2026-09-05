@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CinematicPageHero from "@/components/cinematic/CinematicPageHero";
 import AccountDeletionForm from "@/components/sections/AccountDeletionForm";
 import { site } from "@/lib/site";
@@ -56,7 +57,14 @@ export default function ContactAppPage() {
               </li>
             </ul>
             <p>
-              También puedes escribirnos a{" "}
+              Consulta cómo tratamos tus datos en la{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-ink underline underline-offset-2"
+              >
+                Política de Privacidad
+              </Link>
+              . También puedes escribirnos a{" "}
               <a
                 href={`mailto:${site.email}?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta%20(app)`}
                 className="text-ink underline underline-offset-2"

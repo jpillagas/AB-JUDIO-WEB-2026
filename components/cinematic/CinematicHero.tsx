@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
@@ -12,9 +13,21 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function CinematicHero() {
   return (
     <section className="relative overflow-visible bg-black text-white">
+      <div aria-hidden className="absolute inset-0 overflow-hidden">
+        <Image
+          src={media.hero.background}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/70 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/65" />
+      </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-24 -top-32 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(201,168,106,0.28)_0%,transparent_68%)]"
+        className="pointer-events-none absolute -left-24 -top-32 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(201,168,106,0.22)_0%,transparent_68%)]"
       />
 
       <div className="container-x relative pt-28 lg:pt-32">

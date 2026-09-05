@@ -130,9 +130,14 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/5 pt-6 text-xs text-bone/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>
-            Diseñado con cuidado para la comunidad hispana en NY, NJ y CT.
-          </p>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-white">
+              Política de privacidad
+            </Link>
+            <Link href="/contact-app" className="hover:text-white">
+              Eliminar cuenta (app)
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

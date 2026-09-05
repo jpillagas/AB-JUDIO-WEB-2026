@@ -9,9 +9,8 @@ export const media = {
   logoNeuhauser: "/imagenes/NEUHASERLAWpllc-LOGO-blanco.png",
   logoNeuhauserDark: "/imagenes/NEUHASERLAWpllc-LOGO-negro.png",
   hero: {
-    background:
-      "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=2400&q=80",
-    portrait: "/imagenes/markPortada.png",
+    background: "/imagenes/hero-oficina.png",
+    portrait: "/imagenes/mark-hero.png",
   },
   pageHeroes: {
     nosotros:
