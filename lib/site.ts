@@ -285,6 +285,16 @@ export const team = [
     image: "/imagenes/team/mateo-garzon.jpg",
   },
   {
+    name: "Rajinder Kaur",
+    role: "Abogada de Inmigración",
+    image: "/imagenes/team/rajinder-kaur.jpg",
+  },
+  {
+    name: "Anastasia Lee",
+    role: "Abogada de inmigración",
+    image: null,
+  },
+  {
     name: "Juan Carlos Miranda",
     role: "Director de Comunicación",
     image: "/imagenes/team/juan-carlos-miranda.jpg",
@@ -305,57 +315,17 @@ export const team = [
     image: null,
   },
   {
-    name: "Rajinder Kaur",
-    role: "Abogada de Inmigración",
-    image: "/imagenes/team/rajinder-kaur.jpg",
-  },
-  {
-    name: "Anastasia Lee",
-    role: "Abogada de inmigración",
-    image: null,
-  },
-  {
     name: "Jessica Humala",
-    role: "Paralegal Senior, New York",
+    role: "Paralegal Senior, Nueva York",
     image: "/imagenes/team/jessica-humala.jpg",
   },
   {
-    name: "Eniris Brito",
-    role: "Paralegal, New York",
-    image: "/imagenes/team/eniris-brito.jpg",
-  },
-  {
     name: "Antonella Orejuela",
-    role: "Paralegal, New York",
+    role: "Paralegal, Nueva York",
     image: "/imagenes/team/antonella-orejuela.jpg",
   },
   {
-    name: "Juliette Saint",
-    role: "Paralegal",
-    image: "/imagenes/team/juliette-saint.jpg",
-  },
-  {
-    name: "Belen Castro",
-    role: "Paralegal, New Jersey",
-    image: "/imagenes/team/belen-castro.jpg",
-  },
-  {
-    name: "María Parra",
-    role: "Paralegal, New Jersey",
-    image: "/imagenes/team/maria-parra.jpg",
-  },
-  {
-    name: "María Fernanda Albarracín",
-    role: "Paralegal de inmigración",
-    image: null,
-  },
-  {
-    name: "Marcos Hernández",
-    role: "Paralegal",
-    image: null,
-  },
-  {
-    name: "Ana Hinojosa",
+    name: "Ana Cecilia Barbosa",
     role: "Paralegal",
     image: null,
   },
@@ -365,9 +335,29 @@ export const team = [
     image: null,
   },
   {
-    name: "Ana Cecilia Barbosa",
-    role: "Paralegal",
+    name: "Ana Hinojosa",
+    role: "Paralegal, Nueva York",
     image: null,
+  },
+  {
+    name: "María Parra",
+    role: "Paralegal, Nueva Jersey",
+    image: "/imagenes/team/maria-parra.jpg",
+  },
+  {
+    name: "Belén Castro",
+    role: "Paralegal, Nueva Jersey",
+    image: "/imagenes/team/belen-castro.jpg",
+  },
+  {
+    name: "María Fernanda Albarracín",
+    role: "Paralegal de inmigración",
+    image: null,
+  },
+  {
+    name: "Marlene Piña",
+    role: "Paralegal",
+    image: "/imagenes/team/marlene-pina.png",
   },
   {
     name: "Melissa Zárate",
@@ -380,19 +370,14 @@ export const team = [
     image: null,
   },
   {
-    name: "Marlene Piña",
+    name: "Eniris Brito",
+    role: "Paralegal, Nueva York",
+    image: "/imagenes/team/eniris-brito.jpg",
+  },
+  {
+    name: "Juliette Saint",
     role: "Paralegal",
-    image: "/imagenes/team/marlene-pina.png",
-  },
-  {
-    name: "Cristi Villavicencio",
-    role: "Asistente administrativo",
-    image: "/imagenes/team/cristi-villavicencio.png",
-  },
-  {
-    name: "Marcela Coronel",
-    role: "Asistente administrativo",
-    image: "/imagenes/team/marcela-coronel.png",
+    image: "/imagenes/team/juliette-saint.jpg",
   },
   {
     name: "Eglet Hernández",
@@ -408,6 +393,21 @@ export const team = [
     name: "Nathalia Osorio",
     role: "Reception",
     image: null,
+  },
+  {
+    name: "Valeria Coronel",
+    role: "Asistente administrativo",
+    image: null,
+  },
+  {
+    name: "Cristina Villavicencio",
+    role: "Asistente administrativo",
+    image: "/imagenes/team/cristi-villavicencio.png",
+  },
+  {
+    name: "Marcela Coronel",
+    role: "Asistente administrativo",
+    image: "/imagenes/team/marcela-coronel.png",
   },
 ] as const;
 
