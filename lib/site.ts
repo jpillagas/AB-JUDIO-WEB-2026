@@ -315,6 +315,11 @@ export const team = [
     image: null,
   },
   {
+    name: "Bleona Kelmendi",
+    role: "Asistente Ejecutiva",
+    image: "/imagenes/team/bleona-kelmendi.jpg",
+  },
+  {
     name: "Jessica Humala",
     role: "Paralegal Senior, Nueva York",
     image: "/imagenes/team/jessica-humala.jpg",
@@ -345,9 +350,19 @@ export const team = [
     image: "/imagenes/team/maria-parra.jpg",
   },
   {
+    name: "Lesly S. Cariño",
+    role: "Paralegal de inmigración, Nueva York",
+    image: null,
+  },
+  {
     name: "Belén Castro",
     role: "Paralegal, Nueva Jersey",
     image: "/imagenes/team/belen-castro.jpg",
+  },
+  {
+    name: "Jorge Guillermo",
+    role: "Paralegal de inmigración, Nueva York",
+    image: null,
   },
   {
     name: "María Fernanda Albarracín",
@@ -370,9 +385,19 @@ export const team = [
     image: null,
   },
   {
+    name: "Shelly Straussberg",
+    role: "Paralegal Real Estate",
+    image: "/imagenes/team/shelly-straussberg.jpg",
+  },
+  {
     name: "Eniris Brito",
     role: "Paralegal, Nueva York",
     image: "/imagenes/team/eniris-brito.jpg",
+  },
+  {
+    name: "Gabby Gagnesya",
+    role: "Paralegal Real Estate",
+    image: null,
   },
   {
     name: "Juliette Saint",
