@@ -317,7 +317,7 @@ export const team = [
   {
     name: "Bleona Kelmendi",
     role: "Asistente Ejecutiva",
-    image: "/imagenes/team/bleona-kelmendi.jpg",
+    image: "/imagenes/team/bleona-kelmendi-web.jpg",
   },
   {
     name: "Jessica Humala",
@@ -387,7 +387,7 @@ export const team = [
   {
     name: "Shelly Straussberg",
     role: "Paralegal Real Estate",
-    image: "/imagenes/team/shelly-straussberg.jpg",
+    image: "/imagenes/team/shelly-straussberg-web.jpg",
   },
   {
     name: "Eniris Brito",

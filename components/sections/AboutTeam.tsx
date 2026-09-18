@@ -45,6 +45,7 @@ export default function AboutTeam() {
                     src={person.image}
                     alt={person.name}
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     className="object-cover object-top grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
