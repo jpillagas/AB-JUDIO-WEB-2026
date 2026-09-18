@@ -317,7 +317,7 @@ export const team = [
   {
     name: "Bleona Kelmendi",
     role: "Asistente Ejecutiva",
-    image: "/imagenes/team/bleona-kelmendi-web.jpg",
+    image: null,
   },
   {
     name: "Jessica Humala",
