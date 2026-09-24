@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { site } from "@/lib/site";
+import { trackMetaEvent } from "@/lib/metaPixel";
 
 export default function WhatsAppFloat() {
   const href = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
@@ -14,6 +15,7 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hablar por WhatsApp"
+      onClick={() => trackMetaEvent("Contact", { content_name: "whatsapp_float" })}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 220, damping: 15 }}
