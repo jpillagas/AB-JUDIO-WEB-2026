@@ -86,8 +86,6 @@ export const site = {
     instagram: "https://instagram.com/elabogadojudio",
     tiktok: "https://tiktok.com/@elabogadojudio",
   },
-  /** Meta (Facebook) Pixel – Events Manager */
-  metaPixelId: "1772767887327948",
   stats: [
     {
       value: 15,

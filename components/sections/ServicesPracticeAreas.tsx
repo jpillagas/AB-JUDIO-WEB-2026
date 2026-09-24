@@ -5,7 +5,6 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { practiceAreas, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { trackMetaEvent } from "@/lib/metaPixel";
 
 export default function ServicesPracticeAreas() {
   useEffect(() => {
@@ -92,11 +91,6 @@ export default function ServicesPracticeAreas() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary mt-8"
-                  onClick={() =>
-                    trackMetaEvent("Contact", {
-                      content_name: `whatsapp_servicios_${area.id}`,
-                    })
-                  }
                 >
                   <MessageCircle className="h-4 w-4" />
                   Agendar cita por WhatsApp

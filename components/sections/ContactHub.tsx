@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { trackMetaEvent } from "@/lib/metaPixel";
 
 const ContactOfficesMap = dynamic(
   () => import("@/components/sections/ContactOfficesMap"),
@@ -121,11 +120,6 @@ export default function ContactHub() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary mt-5 !px-6 !py-3 !text-xs"
-                  onClick={() =>
-                    trackMetaEvent("Schedule", {
-                      content_name: `agendar_${activeService.label}`,
-                    })
-                  }
                 >
                   Agendar cita <ArrowRight className="h-4 w-4" />
                 </a>
@@ -309,9 +303,6 @@ export default function ContactHub() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                trackMetaEvent("Contact", { content_name: "whatsapp_contacto" })
-              }
               className="group relative flex flex-col border border-gold/40 bg-gold p-6 text-ink transition hover:bg-gold-light hover:shadow-[0_12px_40px_rgba(201,168,106,0.35)]"
             >
               <span className="flex h-11 w-11 items-center justify-center border border-ink/15 bg-ink/5 text-ink">

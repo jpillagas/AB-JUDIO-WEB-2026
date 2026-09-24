@@ -6,7 +6,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 import GsapInit from "@/components/GsapInit";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import MetaPixel from "@/components/MetaPixel";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,7 +56,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-bone text-ink antialiased">
-        <MetaPixel />
         <SmoothScroll />
         <GsapInit />
         <RevealOnScroll />
