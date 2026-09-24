@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Script from "next/script";
+import { trackMetaEvent } from "@/lib/metaPixel";
 
 interface Props {
   src: string;
@@ -10,6 +11,13 @@ interface Props {
 
 export default function GoHighLevelCalendar({ src, iframeId }: Props) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    if (trackedRef.current) return;
+    trackedRef.current = true;
+    trackMetaEvent("Schedule", { content_name: `calendario_${iframeId}` });
+  }, [iframeId]);
 
   useEffect(() => {
     const iframe = iframeRef.current;
