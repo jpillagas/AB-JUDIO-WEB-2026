@@ -33,10 +33,10 @@ export default function AboutTeam() {
           {team.map((person, i) => (
             <motion.div
               key={person.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: (i % 5) * 0.06 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, delay: Math.min((i % 5) * 0.04, 0.16) }}
               className="group"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-ink-800">
@@ -45,7 +45,7 @@ export default function AboutTeam() {
                     src={person.image}
                     alt={person.name}
                     fill
-                    unoptimized
+                    loading={i < 4 ? "eager" : "lazy"}
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     className="object-cover object-top grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />

@@ -44,7 +44,10 @@ function MapSync({
 
   useEffect(() => {
     if (!offices.length) return;
-    const bounds = L.latLngBounds(offices.map((o) => [o.lat, o.lng]));
+    // Evitar zoom a todo el continente cuando hay oficinas US + Ecuador
+    const usOffices = offices.filter((o) => o.region !== "latam");
+    const fitTargets = usOffices.length ? usOffices : offices;
+    const bounds = L.latLngBounds(fitTargets.map((o) => [o.lat, o.lng]));
     map.fitBounds(bounds, { padding: [28, 28], maxZoom: 11 });
   }, [map, offices]);
 

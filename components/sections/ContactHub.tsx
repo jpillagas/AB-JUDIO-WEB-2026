@@ -33,6 +33,13 @@ export default function ContactHub() {
   const activeService = site.bookingAreas[activeServiceIndex];
   const selectedOffice =
     site.offices.find((o) => o.id === selectedOfficeId) ?? null;
+  const isLatamOffice = selectedOffice?.region === "latam";
+  const displayedHours = isLatamOffice
+    ? selectedOffice.hours ?? site.hoursEcuador
+    : site.hours;
+  const hoursLabel = isLatamOffice
+    ? `Horarios · ${selectedOffice.name}`
+    : "Horarios";
 
   const directionsUrl = selectedOffice
     ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -69,7 +76,8 @@ export default function ContactHub() {
             Agenda Tu <span className="text-gold">Cita</span>
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-ink-700">
-            Elige el tipo de consulta y revisa nuestras sucursales en el mapa.
+            Elige el tipo de consulta y revisa nuestras sucursales en el mapa,
+            incluyendo Cuenca, Ecuador.
           </p>
 
           <div className="mt-8">
@@ -77,7 +85,7 @@ export default function ContactHub() {
               Tipo de consulta:
             </p>
             <div
-              className="grid gap-3 sm:grid-cols-3"
+              className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
               role="tablist"
               aria-label="Tipo de consulta"
             >
@@ -234,7 +242,7 @@ export default function ContactHub() {
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-ink-700">
             Llámanos, escríbenos o escríbenos por WhatsApp. Atendemos en Nueva
-            York, Nueva Jersey y Connecticut.
+            York, Nueva Jersey, Connecticut y Cuenca, Ecuador.
           </p>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -282,10 +290,10 @@ export default function ContactHub() {
                 <Clock className="h-4 w-4" />
               </span>
               <span className="mt-5 text-[11px] font-medium uppercase tracking-[0.22em] text-bone/55">
-                Horarios
+                {hoursLabel}
               </span>
               <ul className="mt-3 space-y-2">
-                {site.hours.map((h) => (
+                {displayedHours.map((h) => (
                   <li
                     key={h.day}
                     className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 text-sm last:border-0 last:pb-0"

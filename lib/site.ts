@@ -6,6 +6,9 @@ export type Office = {
   address: string;
   lat: number;
   lng: number;
+  /** us = EE.UU.; latam = Ecuador / LATAM */
+  region?: "us" | "latam";
+  hours?: { day: string; hours: string }[];
 };
 
 export const site = {
@@ -38,6 +41,7 @@ export const site = {
       address: "64-25 Central Ave, Glendale, Queens, NY 11385",
       lat: 40.7048,
       lng: -73.8819,
+      region: "us",
     },
     {
       id: "jackson-heights",
@@ -45,6 +49,7 @@ export const site = {
       address: "90-20 Elmhurst Ave, Jackson Heights, Queens, NY 11372",
       lat: 40.7483,
       lng: -73.8790,
+      region: "us",
     },
     {
       id: "newark",
@@ -52,6 +57,7 @@ export const site = {
       address: "110 Congress St, Newark, NJ 07105",
       lat: 40.7264,
       lng: -74.1565,
+      region: "us",
     },
     {
       id: "east-haven",
@@ -59,6 +65,7 @@ export const site = {
       address: "310 Main St, East Haven, CT 06512",
       lat: 41.2765,
       lng: -72.8682,
+      region: "us",
     },
     {
       id: "stratford",
@@ -66,6 +73,7 @@ export const site = {
       address: "919 Stratford Ave Unit 3, Stratford, CT 06615",
       lat: 41.1848,
       lng: -73.1330,
+      region: "us",
     },
     {
       id: "danbury",
@@ -73,12 +81,31 @@ export const site = {
       address: "3 West St, Danbury, CT 06810",
       lat: 41.3948,
       lng: -73.4540,
+      region: "us",
+    },
+    {
+      id: "cuenca",
+      name: "Cuenca, Ecuador",
+      address: "Remigio Crespo y A. Tamariz esq, Cuenca, Ecuador",
+      lat: -2.9001,
+      lng: -79.0059,
+      region: "latam",
+      hours: [
+        { day: "Lunes a Viernes", hours: "9:00 AM – 6:00 PM" },
+        { day: "Sábados", hours: "9:00 AM – 1:00 PM" },
+        { day: "Domingos", hours: "Cerrado" },
+      ],
     },
   ] satisfies Office[],
-  serviceArea: ["Nueva York", "Nueva Jersey", "Connecticut"],
+  serviceArea: ["Nueva York", "Nueva Jersey", "Connecticut", "Ecuador"],
   hours: [
     { day: "Lunes a Viernes", hours: "10:00 AM – 5:00 PM" },
     { day: "Sábados", hours: "10:00 AM – 2:00 PM" },
+    { day: "Domingos", hours: "Cerrado" },
+  ],
+  hoursEcuador: [
+    { day: "Lunes a Viernes", hours: "9:00 AM – 6:00 PM" },
+    { day: "Sábados", hours: "9:00 AM – 1:00 PM" },
     { day: "Domingos", hours: "Cerrado" },
   ],
   social: {
@@ -115,6 +142,7 @@ export const site = {
     { label: "Servicios", href: "/servicios" },
     { label: "Contactos", href: "/contacto" },
     { label: "Noticias", href: "/blog" },
+    { label: "Ecuador", href: "/ecuador" },
   ],
   servicesSubmenu: [
     { label: "Inmigración", href: "/servicios#inmigracion" },
@@ -140,8 +168,125 @@ export const site = {
       description:
         "Compra, venta e inversión inmobiliaria con respaldo legal en cada etapa.",
     },
+    {
+      label: "Cuenca, Ecuador",
+      href: "/ecuador#agendar",
+      description:
+        "Atención en nuestra oficina de Cuenca. Agenda tu cita o habla con un asesor. Horario: Lunes a Viernes 9:00 AM – 6:00 PM · Sábados 9:00 AM – 1:00 PM.",
+    },
   ],
 };
+
+/** Contenido de la landing Ecuador / Cuenca. */
+export const ecuadorLanding = {
+  path: "/ecuador",
+  bannerTitle: "El Abogado Judío en Cuenca",
+  bannerSubtitle:
+    "Misma marca, ahora también en Ecuador. Asesoría legal cercana en Cuenca.",
+  teamTitle: "Quiénes somos",
+  teamLead: "El equipo de El Abogado Judío Ecuador, en Cuenca.",
+  servicesTitle: "Nuestros Servicios",
+  servicesLead:
+    "Asesoría y representación migratoria en Cuenca, con el mismo estándar de El Abogado Judío.",
+  services: [
+    {
+      title: "Visas de Turismo",
+      description:
+        "Orientación y acompañamiento en la solicitud de visas de turismo según tu perfil y destino.",
+    },
+    {
+      title: "Estatus Juvenil",
+      description:
+        "Evaluación y gestión de opciones para jóvenes que buscan regularizar su estatus migratorio.",
+    },
+    {
+      title: "Asilo",
+      description:
+        "Asesoría en procesos de asilo y otras formas de protección migratoria disponibles.",
+    },
+    {
+      title: "VAWA",
+      description:
+        "Apoyo legal a víctimas de violencia doméstica bajo las protecciones de VAWA.",
+    },
+    {
+      title: "Visa U",
+      description:
+        "Asesoría para víctimas de delitos que pueden calificar a una Visa U.",
+    },
+    {
+      title: "Peticiones",
+      description:
+        "Peticiones familiares y otras gestiones para reunificar o fortalecer tu caso migratorio.",
+    },
+    {
+      title: "Ciudadanía",
+      description:
+        "Acompañamiento en el proceso de naturalización y obtención de la ciudadanía.",
+    },
+    {
+      title: "Green Card",
+      description:
+        "Residencia permanente: evaluación de vías disponibles y seguimiento de tu caso.",
+    },
+  ],
+  locationTitle: "Ubicación",
+  locationLead: "Encuéntranos en Cuenca, Ecuador.",
+  ctaTitle: "¿Listo para dar el siguiente paso?",
+  ctaLead:
+    "Agenda tu cita en línea o comunícate con un asesor. Tú eliges cómo empezar.",
+};
+
+export const ecuadorTeam = [
+  {
+    name: "Sebastian Cevallos",
+    image: "/imagenes/ecuador/team/sebastian-cevallos.jpg",
+  },
+  {
+    name: "Valeria Coronel",
+    image: "/imagenes/ecuador/team/valeria-coronel.jpg",
+  },
+  {
+    name: "Pablo Barrera",
+    image: "/imagenes/ecuador/team/pablo-barrera.jpg",
+  },
+  {
+    name: "Paul Espejo",
+    image: "/imagenes/ecuador/team/paul-espejo.jpg",
+  },
+  {
+    name: "Camila Barrionuevo",
+    image: "/imagenes/ecuador/team/camila-barrionuevo.jpg",
+  },
+  {
+    name: "Cristina Villavicencio",
+    image: "/imagenes/ecuador/team/cristina-villavicencio.jpg",
+  },
+  {
+    name: "Daniela Palacios",
+    image: "/imagenes/ecuador/team/daniela-palacios.jpg",
+  },
+  {
+    name: "Dyan Aguilar",
+    image: "/imagenes/ecuador/team/dyan-aguilar.jpg",
+  },
+  {
+    name: "Katherin Arguello",
+    image: "/imagenes/ecuador/team/katherin-arguello.jpg",
+  },
+  {
+    name: "Marcela Coronel",
+    image: "/imagenes/ecuador/team/marcela-coronel.jpg",
+  },
+  {
+    name: "Mayra Tapia",
+    image: "/imagenes/ecuador/team/mayra-tapia.jpg",
+  },
+  {
+    name: "Vanessa Lopez",
+    image: "/imagenes/ecuador/team/vanessa-lopez.jpg",
+  },
+] as const;
 
 export const bookingCalendars = {
   inmigracion: {

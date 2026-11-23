@@ -12,6 +12,8 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function Footer() {
+  const ecuadorOffice = site.offices.find((o) => o.id === "cuenca");
+
   return (
     <footer className="bg-ink text-bone/80">
       <div className="container-x py-16 lg:py-20">
@@ -26,7 +28,7 @@ export default function Footer() {
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-bone/60">
               Contáctanos o agenda una cita presencial. Defendemos tus derechos
-              en Nueva York, Nueva Jersey y Connecticut.
+              en Nueva York, Nueva Jersey, Connecticut y Cuenca, Ecuador.
             </p>
 
             <ul className="mt-6 space-y-3 text-sm">
@@ -42,12 +44,18 @@ export default function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 text-gold" />
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
                   {site.address.line1}, {site.address.line2}
                 </span>
               </li>
+              {ecuadorOffice && (
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>{ecuadorOffice.address}</span>
+                </li>
+              )}
             </ul>
           </div>
 

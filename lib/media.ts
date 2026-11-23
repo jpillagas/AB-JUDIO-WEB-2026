@@ -21,6 +21,7 @@ export const media = {
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80",
     blog:
       "https://images.unsplash.com/photo-1455390572262-044cdead277a?auto=format&fit=crop&w=2400&q=80",
+    ecuador: "/imagenes/ecuador/oficina-equipo.jpg",
   },
   sections: {
     whyUs: "/imagenes/SeccioNuestrosClientes.png",
@@ -28,6 +29,7 @@ export const media = {
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
     cta:
       "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=2000&q=80",
+    ecuadorOffice: "/imagenes/ecuador/oficina-equipo.jpg",
   },
 } as const;
 

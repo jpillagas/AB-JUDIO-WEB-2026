@@ -58,7 +58,8 @@ export default function Header() {
           {site.navigation.map((item) => {
             const active =
               pathname === item.href ||
-              (item.href === "/servicios" && pathname.startsWith("/servicios"));
+              (item.href === "/servicios" && pathname.startsWith("/servicios")) ||
+              (item.href === "/ecuador" && pathname.startsWith("/ecuador"));
 
             if (item.href === "/servicios") {
               return (
@@ -113,6 +114,23 @@ export default function Header() {
                     )}
                   </AnimatePresence>
                 </div>
+              );
+            }
+
+            if (item.href === "/ecuador") {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "inline-flex items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] transition",
+                    active
+                      ? "border-gold bg-gold text-ink shadow-[0_0_0_1px_rgba(201,168,106,0.35)]"
+                      : "border-gold/70 bg-gold/15 text-gold hover:border-gold hover:bg-gold hover:text-ink"
+                  )}
+                >
+                  {item.label}
+                </Link>
               );
             }
 
@@ -214,6 +232,23 @@ export default function Header() {
                         )}
                       </AnimatePresence>
                     </div>
+                  );
+                }
+
+                if (item.href === "/ecuador") {
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "mt-1 inline-flex items-center justify-center rounded-full border px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition",
+                        active
+                          ? "border-gold bg-gold text-ink"
+                          : "border-gold/70 bg-gold/15 text-gold hover:border-gold hover:bg-gold hover:text-ink"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
                   );
                 }
 
